@@ -1,0 +1,39 @@
+{% load static %}
+
+<!-- Header -->
+        <header id="header">
+            <nav class="navbar navbar-expand bg-dark subb">
+                <div class="container header">
+
+                    <!-- Navbar Brand-->
+                    <a class="navbar-brand" href="/">
+                        <span class="brand">
+                            <span class="featured">
+                                <span class="first">Co</span>
+                            </span>
+                            <span class="last">Voturage</span>
+                        </span>
+
+                        <!--
+                            Custom Logo
+                            <img src="assets/images/logo.svg" alt="NEXGEN">
+                        -->
+                    </a>
+
+                    <!-- Nav holder -->
+                    <div class="ml-auto"></div>
+
+                    <!-- Navbar Items -->
+                    <ul class="navbar-nav items">
+                        <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Accueil</a></li>
+                        <li class="nav-item"><a href="{% url 'covoiturage-list' %}" class="nav-link">Voir les voyageurs</a></li>
+                        <li class="nav-item"><a href="{% url 'covoiturage-form' %}" class="nav-link">Publier votre Trajet</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Inscription</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Connexion</a></li>
+                    </ul>
+
+
+                </div>
+            </nav>
+
+        </header>

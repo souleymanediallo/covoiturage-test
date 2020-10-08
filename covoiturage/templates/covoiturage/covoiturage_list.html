@@ -1,0 +1,48 @@
+{% extends "layout/base.html" %}
+
+{% block content %}
+ <!-- Testimonials -->
+        <section id="testimonials" class="section-1 offers testimonials">
+            <div class="container-fluid">
+                <div class="row text-center intro">
+                    <div class="col-12">
+                        <span class="pre-title">Covoiturage au SÉNÉGAL</span>
+                        <h2>Liste des  <span class="featured"><span>Voyageurs</span></span></h2>
+                        <p class="text-max-800">We work intensively in search of ideals that can add up in the lives of our customers. This is what moves us and we are grateful for the recognition.</p>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center items">
+                    <div class="col-lg-9">
+                        <div class="row">
+                        {% for covoiturage in covoiturages %}
+                        <div data-aos="fade-up" class="col-12 item">
+                            <div class="card">
+                                <div class="col-12">
+                                    <div class="d-flex justify-content-between">
+                                        <h6>{{ covoiturage.start_destination }}</h6>
+                                        <h6>{{ covoiturage.end_destination }}</h6>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex justify-content-between">
+                                        <h6>Date {{ covoiturage.date_depart|date }}</h6>
+                                        <h6>Heure {{ covoiturage.time_depart|time }}</h6>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex justify-content-between">
+                                        <h6>Place disponible {{ covoiturage.siege }}</h6>
+                                        <h6>Prix par passager {{ covoiturage.price }}</h6>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    {% endfor %}
+                        </div>
+                    </div>
+                    <div class="col-lg-3"></div>
+                </div>
+            </div>
+        </section>
+
+{% endblock %}

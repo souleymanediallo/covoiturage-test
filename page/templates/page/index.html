@@ -1,0 +1,69 @@
+{% extends "layout/base.html" %}
+
+{% load static %}
+{% block content %}
+    <!-- Hero -->
+        <section id="slider" class="hero p-0 odd">
+            <div class="swiper-container no-slider animation slider-h-100 slider-h-auto">
+                <div class="swiper-wrapper">
+
+                    <!-- Item 1 -->
+                    <div class="swiper-slide slide-center">
+
+                        <!-- Media -->
+                        <img class="full-image to-bottom" data-mask="70" src="{% static 'img/new-banner-3.jpg' %}"></img>
+
+                        <div class="slide-content row">
+                            <div class="col-12 d-flex justify-content-start justify-content-md-center inner">
+                                <div class="center text-left text-md-center">
+
+                                    <!-- Content -->
+                                    <h1 class="title effect-static-text">Co<span class="featured"><span>Voiturage</span></span></h1>
+                                    <p class="description mr-auto ml-auto">Successful strategies require data analysis, creativity and customer focus, taking advantage of the latest technologies to offer excellent services.</p>
+
+                                    <!-- Action -->
+                                    <div class="buttons">
+                                        <div class="d-sm-inline-flex">
+                                            <a href="#contact" class="smooth-anchor mt-4 btn primary-button">Publier votre Trajet</a>
+                                            <a href="{% url 'covoiturage-list' %}" class="smooth-anchor ml-sm-4 mt-4 btn outline-button">Voir les voyageurs</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+		 <!-- Features -->
+        <section id="features" class="section-1 features offers featured">
+            <div class="container">
+                <div class="row justify-content-center items">
+                    <div class="col-12 col-md-6 col-lg-4 item">
+                        <div class="card">
+                            <i class="icon featured icon-people"></i>
+                            <h4>Human Capital</h4>
+                            <p>Humanizing business: Harness the power of technology to improve the way people work.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 item">
+                        <div class="card">
+                            <i class="icon featured icon-pie-chart"></i>
+                            <h4>Core Business</h4>
+                            <p>It takes innovative approaches to transform, modernize, and run existing platforms.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 item">
+                        <div class="card">
+                            <i class="icon featured icon-speedometer"></i>
+                            <h4>Performance</h4>
+                            <p>Achieving maximum impact and value from investments in finance and supply chain.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+{% endblock  %}

@@ -1,0 +1,109 @@
+<html lang="fr">
+{% load static %}
+<head>
+
+        <!-- ==============================================
+        Basic Page Needs
+        =============================================== -->
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+
+        <title>NEXGEN - Business, Consulting, Finance, Insurance, Startup and Technology</title>
+
+        <meta name="description" content="Business, Consulting, Finance, Insurance, Startup and Technology">
+        <meta name="subject" content="Business, Consulting, Finance, Insurance, Startup and Technology">
+        <meta name="author" content="Codings">
+
+        <!-- ==============================================
+        Favicons
+        =============================================== -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="assets/images/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="assets/images/apple-touch-icon-114x114.png">
+
+        <!-- ==============================================
+        Vendor Stylesheet
+        =============================================== -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/slider.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'css/icons.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/icons-fa.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/animation.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/gallery.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/cookie-notice.min.css' %}">
+
+        <!-- ==============================================
+        Custom Stylesheet
+        =============================================== -->
+        <link rel="stylesheet" href="{% static 'css/default.css' %}">
+
+        <!-- ==============================================
+        Theme Color
+        =============================================== -->
+        <meta name="theme-color" content="#21333e">
+
+        <!-- ==============================================
+        Theme Settings
+        =============================================== -->
+        <style>
+            :root {
+                --hero-bg-color: #000007;
+
+                --section-1-bg-color: #eef4ed;
+                --section-2-bg-color: #ffffff;
+                --section-3-bg-color: #111117;
+                --section-4-bg-color: #eef4ed;
+                --section-5-bg-color: #ffffff;
+                --section-6-bg-color: #111117; --section-6-bg-image: url('/static/images/bg-1.jpg');
+                --section-7-bg-color: #ffffff;
+            }
+        </style>
+
+    </head>
+
+<body>
+    {% include 'partials/header.html' %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% include 'partials/footer.html' %}
+
+    <div id="scroll-to-top" class="scroll-to-top">
+            <a href="#header" class="smooth-anchor">
+                <i class="fas fa-arrow-up"></i>
+            </a>
+    </div>
+
+        <!-- ==============================================
+        Google reCAPTCHA // Put your site key here
+        =============================================== -->
+        <script src="https://www.google.com/recaptcha/api.js?render=6Lf-NwEVAAAAAPo_wwOYxFW18D9_EKvwxJxeyUx7"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css">
+        <!-- ==============================================
+        Vendor Scripts
+        =============================================== -->
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/jquery.easing.min.js' %}"></script>
+        <script src="{% static 'js/jquery.inview.min.js' %}"></script>
+        <script src="{% static 'js/popper.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/ponyfill.min.js' %}"></script>
+        <script src="{% static 'js/slider.min.js' %}"></script>
+        <script src="{% static 'js/animation.min.js' %}"></script>
+        <script src="{% static 'js/progress-radial.min.js' %}"></script>
+        <script src="{% static 'js/bricklayer.min.js' %}"></script>
+        <script src="{% static 'js/gallery.min.js' %}"></script>
+        <script src="{% static 'js/shuffle.min.js' %}"></script>
+        <script src="{% static 'js/cookie-notice.min.js' %}"></script>
+        <script src="{% static 'js/particles.min.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>
