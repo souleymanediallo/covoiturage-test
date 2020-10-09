@@ -37,10 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'page',
-    'covoiturage',
+    'page.apps.PageConfig',
+    'covoiturage.apps.CovoiturageConfig',
+    'users.apps.UsersConfig',
     'crispy_forms',
-    'users',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +131,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+LOGIN_REDIRECT_URL = "home"
+LOGIN_URL = "login"
+LOGOUT_REDIRECT_URL = "home"

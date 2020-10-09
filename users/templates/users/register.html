@@ -1,0 +1,34 @@
+{% extends "layout/base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+ <!-- Testimonials -->
+        <section id="testimonials" class="section-1 offers testimonials">
+            <div class="container">
+                <div class="row text-center intro">
+                    <div class="col-12">
+                        <span class="pre-title">Covoiturage au Sénégal</span>
+                        <h2>Mon  <span class="featured"><span>Profile</span></span></h2>
+                        <p class="text-max-800">We work intensively in search of ideals that can add up in the lives of our customers. This is what moves us and we are grateful for the recognition.</p>
+                    </div>
+                </div>
+                <div class="row justify-content-center items">
+                    <div class="col-lg-9">
+                       <h1>Page Profile</h1>
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                {{ form|crispy }}
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-dark">Envoyer</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-3"></div>
+                </div>
+            </div>
+        </section>
+
+{% endblock %}

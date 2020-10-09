@@ -1,0 +1,20 @@
+.bg-black {
+    background-color: #000000;
+}
+
+header .navbar-expand {
+    padding: 10px 0px;
+}
+
+section {
+    padding-top: 80px;
+    padding-bottom: 1px;
+}
+
+.odd:not(.custom) .card:not(.no-hover) {
+    background: #000;
+}
+
+.footer {
+    background-color: #000000;
+}

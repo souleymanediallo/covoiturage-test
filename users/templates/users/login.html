@@ -1,0 +1,38 @@
+{% extends "layout/base.html" %}
+
+{% load crispy_forms_tags %}
+{% load static %}
+
+
+{% block content %}
+        <section class="section-1444 odd offers bg-black">
+            <div class="container smaller">
+                <div class="row intro">
+                    <div class="col-12 col-md-12 align-self-center text-center text-md-left">
+                        <h2 class="text-center"><span class="featured"><span>Connexion</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Hero -->
+ <!-- Testimonials -->
+        <section id="testimonials" class="section-1 offers testimonials">
+            <div class="container">
+                <div class="row justify-content-center items">
+                    <div class="col-lg-9">
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                {{ form|crispy }}
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-dark">Envoyer</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-3"></div>
+                </div>
+            </div>
+        </section>
+
+{% endblock %}

@@ -2,9 +2,8 @@
 
 <!-- Header -->
         <header id="header">
-            <nav class="navbar navbar-expand bg-dark subb">
+            <nav class="navbar navbar-expand bg-black subb">
                 <div class="container header">
-
                     <!-- Navbar Brand-->
                     <a class="navbar-brand" href="/">
                         <span class="brand">
@@ -13,27 +12,22 @@
                             </span>
                             <span class="last">Voturage</span>
                         </span>
-
-                        <!--
-                            Custom Logo
-                            <img src="assets/images/logo.svg" alt="NEXGEN">
-                        -->
                     </a>
-
-                    <!-- Nav holder -->
-                    <div class="ml-auto"></div>
 
                     <!-- Navbar Items -->
                     <ul class="navbar-nav items">
                         <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Accueil</a></li>
                         <li class="nav-item"><a href="{% url 'covoiturage-list' %}" class="nav-link">Voir les voyageurs</a></li>
                         <li class="nav-item"><a href="{% url 'covoiturage-form' %}" class="nav-link">Publier votre Trajet</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Inscription</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Connexion</a></li>
+                       {% if user.is_authenticated %}
+                        <li class="nav-item"><a href="{% url 'profile' %}" class="nav-link">Dashbord</a></li>
+                        <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Déconnexion</a></li>
+                        {% else %}
+                        <li class="nav-item"><a href="{% url 'register' %}" class="nav-link">Inscription</a></li>
+                        <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">Connexion</a></li>
+                        {% endif %}
                     </ul>
-
 
                 </div>
             </nav>
-
         </header>
