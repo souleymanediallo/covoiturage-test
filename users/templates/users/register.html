@@ -3,30 +3,33 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
- <!-- Testimonials -->
-        <section id="testimonials" class="section-1 offers testimonials">
-            <div class="container">
-                <div class="row text-center intro">
-                    <div class="col-12">
-                        <span class="pre-title">Covoiturage au Sénégal</span>
-                        <h2>Mon  <span class="featured"><span>Profile</span></span></h2>
-                        <p class="text-max-800">We work intensively in search of ideals that can add up in the lives of our customers. This is what moves us and we are grateful for the recognition.</p>
+        <section class="section-1444 odd offers bg-black">
+            <div class="container smaller">
+                <div class="row intro">
+                    <div class="col-12 col-md-12 align-self-center text-center text-md-left">
+                        <h2 class="text-center"><span class="featured">Inscription</span></h2>
                     </div>
                 </div>
+            </div>
+        </section>
+        <section class="section-1">
+            <div class="container">
                 <div class="row justify-content-center items">
-                    <div class="col-lg-9">
-                       <h1>Page Profile</h1>
-                        <form method="POST">
+                    <div class="col-lg-9 mb-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <form method="POST">
                             {% csrf_token %}
                             <div class="form-group">
                                 {{ form|crispy }}
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-dark">Envoyer</button>
+                                <button class="mt-4 btn outline-button smooth-anchor">Envoyer</button>
                             </div>
                         </form>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-3"></div>
                 </div>
             </div>
         </section>

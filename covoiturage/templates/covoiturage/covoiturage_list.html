@@ -1,47 +1,54 @@
 {% extends "layout/base.html" %}
 
 {% block content %}
- <!-- Testimonials -->
-        <section id="testimonials" class="section-1 offers testimonials">
-            <div class="container-fluid">
-                <div class="row text-center intro">
-                    <div class="col-12">
-                        <span class="pre-title">Covoiturage au SÉNÉGAL</span>
-                        <h2>Liste des  <span class="featured"><span>Voyageurs</span></span></h2>
-                        <p class="text-max-800">We work intensively in search of ideals that can add up in the lives of our customers. This is what moves us and we are grateful for the recognition.</p>
-                    </div>
-                </div>
-
-                <div class="row justify-content-center items">
-                    <div class="col-lg-9">
-                        <div class="row">
+ <!-- liste des annonces  -->
+        <section class="section-1 pb-5">
+                <!-- start item -->
+                <div class="container-fluid">
+                    <div class="row justify-content-center">
                         {% for covoiturage in covoiturages %}
-                        <div data-aos="fade-up" class="col-12 item">
-                            <div class="card">
-                                <div class="col-12">
-                                    <div class="d-flex justify-content-between">
-                                        <h6>{{ covoiturage.start_destination }}</h6>
-                                        <h6>{{ covoiturage.end_destination }}</h6>
+                        <div class="col-lg-9">
+                            <div class="card list-covoiturage p-3 mb-3">
+                                <div class="card-body p-0">
+                                    <div class="d-flex justify-content-between p-0">
+                                        <div class="col-un">
+                                            <span>{{ covoiturage.author.first_name }}</span>
+                                            <h5 class="pb-0 mb-0">{{ covoiturage.profile }}</h5>
+                                        </div>
+                                        <div class="col-deux">
+                                            <span>Lieu de départ</span>
+                                            <h5 class="pb-0 mb-0">{{ covoiturage.start_destination }}</h5>
+                                        </div>
+                                        <div class="col-trois">
+                                            <span>Lieu d'arrivée</span>
+                                            <h5 class="pb-0 mb-0">{{ covoiturage.end_destination }}</h5>
+                                        </div>
+                                        <div class="col-trois">
+                                            <span>Date de départ</span>
+                                            <h6 class="pb-0 mb-0">{{ covoiturage.date_depart }} à {{ covoiturage.time_depart }} </h6>
+                                        </div>
                                     </div>
-                                    <hr>
-                                    <div class="d-flex justify-content-between">
-                                        <h6>Date {{ covoiturage.date_depart|date }}</h6>
-                                        <h6>Heure {{ covoiturage.time_depart|time }}</h6>
-                                    </div>
-                                    <hr>
-                                    <div class="d-flex justify-content-between">
-                                        <h6>Place disponible {{ covoiturage.siege }}</h6>
-                                        <h6>Prix par passager {{ covoiturage.price }}</h6>
+                                    <hr class="p-0 my-3">
+                                    <div class="d-flex justify-content-between p-0">
+                                        <div class="col-un">
+                                            <span>Nombre de place</span>
+                                            <h5>{{ covoiturage.date_depart }}</h5>
+                                        </div>
+                                        <div class="col-deux">
+                                            <span>Prix par passager</span>
+                                            <h5>{{ covoiturage.price }} FCFA</h5>
+                                        </div>
+                                        <div class="col-trois">
+                                            <a href="{{ covoiturage.get_absolute_url }}" class="btn primary-button">Contactez-moi</a>
+                                        </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
-                    {% endfor %}
-                        </div>
-                    </div>
-                    <div class="col-lg-3"></div>
+                        {% endfor %}
                 </div>
+                <!-- end item -->
+
             </div>
         </section>
 

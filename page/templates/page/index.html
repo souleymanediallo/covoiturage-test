@@ -18,8 +18,20 @@
                                 <div class="center text-left text-md-center">
 
                                     <!-- Content -->
-                                    <h1 class="title effect-static-text">Co<span class="featured"><span>Voiturage</span></span></h1>
-                                    <p class="description mr-auto ml-auto">Successful strategies require data analysis, creativity and customer focus, taking advantage of the latest technologies to offer excellent services.</p>
+                                    <h1 class="title effect-static-text">COVOITURAGE AU <span class="featured"><span>SÉNÉGAL</span></span></h1>
+                                    <p class="description mr-auto ml-auto">Recherchez un voyageur</p>
+
+                                    <form class="row form-group-margin">
+                                        <div class="col-md-5 form-group">
+                                            <input class="form-control" placeholder="Lieu de Départ">
+                                        </div>
+                                        <div class="col-md-5 form-group">
+                                            <input class="form-control" placeholder="Lieu d'Arrivée">
+                                        </div>
+                                        <div class="col-md-2 form-group">
+                                            <button class="btn primary-button">Recherchez</button>
+                                        </div>
+                                    </form>
 
                                     <!-- Action -->
                                     <div class="buttons">
@@ -37,62 +49,127 @@
             </div>
         </section>
 
-		 <!-- Features -->
-        <section id="features" class="section-1 features offers featured">
+        <section class="section-1 pb-5">
+                <!-- start item -->
+                <div class="container-fluid">
+                    <div class="row justify-content-center">
+                        {% for covoiturage in covoiturages %}
+                        <div class="col-lg-9">
+                            <div class="card list-covoiturage p-3 mb-3">
+                                <div class="card-body p-0">
+                                    <div class="d-flex justify-content-between p-0">
+                                        <div class="col-un">
+                                            <span>{{ covoiturage.author.first_name }}</span>
+                                            <h5 class="pb-0 mb-0">{{ covoiturage.profile }}</h5>
+                                        </div>
+                                        <div class="col-deux">
+                                            <span>Lieu de départ</span>
+                                            <h5 class="pb-0 mb-0">{{ covoiturage.start_destination }}</h5>
+                                        </div>
+                                        <div class="col-trois">
+                                            <span>Lieu d'arrivée</span>
+                                            <h5 class="pb-0 mb-0">{{ covoiturage.end_destination }}</h5>
+                                        </div>
+                                        <div class="col-trois">
+                                            <span>Date de départ</span>
+                                            <h6 class="pb-0 mb-0">{{ covoiturage.date_depart }} à {{ covoiturage.time_depart }} </h6>
+                                        </div>
+                                    </div>
+                                    <hr class="p-0 my-3">
+                                    <div class="d-flex justify-content-between p-0">
+                                        <div class="col-un">
+                                            <span>Nombre de place</span>
+                                            <h5>{{ covoiturage.date_depart }}</h5>
+                                        </div>
+                                        <div class="col-deux">
+                                            <span>Prix par passager</span>
+                                            <h5>{{ covoiturage.price }} FCFA</h5>
+                                        </div>
+                                        <div class="col-trois">
+                                            <a href="{{ covoiturage.get_absolute_url }}" class="btn primary-button">Contactez-moi</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                </div>
+                <!-- end item -->
+
+            </div>
+        </section>
+
+        <section id="about" class="section-3 odd highlights image-right featured">
             <div class="container">
-                <div class="row justify-content-center items">
+            <div class="row">
+                <div class="col-12 col-md-6 pr-md-5 align-self-center text-center text-md-left text">
+                    <div data-aos="fade-up" class="row intro aos-init aos-animate">
+                        <div class="col-12 p-0">
+                            <span class="pre-title m-auto m-md-0">About the network</span>
+                            <h2><span class="featured"><span>SEN</span></span> COVOITURAGE</h2>
+                            <p>For 12 years we have been providing audit and warranty, financial advice, risk advice, taxes and related services to select clients.</p>
+                        </div>
+                    </div>
+                    <div class="row items">
+                        <div data-aos="fade-up" class="col-12 col-md-6 p-0 pr-md-4 item aos-init aos-animate">
+                            <h4><i class="fas fa-car"></i> Car</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+                        </div>
+                        <div data-aos="fade-up" class="col-12 col-md-6 p-0 item aos-init aos-animate">
+                            <h4><i class="fas fa-lock"></i> Security</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                    <div class="row items">
+                        <div data-aos="fade-up" class="col-12 col-md-6 p-0 item aos-init aos-animate">
+                            <h4><i class="fas fa-certificate"></i> Certificate</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+                        </div>
+                        <div data-aos="fade-up" class="col-12 col-md-6 p-0 pr-md-4 item aos-init aos-animate">
+                            <h4><i class="fas fa-user"></i> Driver</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                    <!-- Action -->
+                    <div class="buttons pb-5">
+                        <div class="d-sm-inline-flex mb-5 mb-md-0">
+                            <a href="#contact" class="smooth-anchor mx-auto mt-4 btn primary-button">Publier votre trajet</a>
+                            <a href="#" class="smooth-anchor mx-auto ml-sm-4 mt-4 btn outline-button">Voir les voyageurs</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 p-0 image">
+                    <img src="{% static 'img/p-1.jpg' %}" class="fit-image" alt="Fit Image">
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <section class="section-1">
+            <div class="container">
+                <div class="row justify-content-center items mb-4">
                     <div class="col-12 col-md-6 col-lg-4 item">
-                        <div class="card">
-                            <i class="icon featured icon-people"></i>
-                            <h4>Human Capital</h4>
-                            <p>Humanizing business: Harness the power of technology to improve the way people work.</p>
+                        <div class="card text-center">
+                            <i class="fas fa-users fa-3x"></i>
+                            <h4>Communauté</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4 item">
-                        <div class="card">
-                            <i class="icon featured icon-pie-chart"></i>
-                            <h4>Core Business</h4>
-                            <p>It takes innovative approaches to transform, modernize, and run existing platforms.</p>
+                        <div class="card text-center">
+                            <i class="fas fa-credit-card fa-3x"></i>
+                            <h4>Moins cher</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4 item">
-                        <div class="card">
-                            <i class="icon featured icon-speedometer"></i>
-                            <h4>Performance</h4>
-                            <p>Achieving maximum impact and value from investments in finance and supply chain.</p>
+                        <div class="card text-center">
+                            <i class="far fa-clock fa-3x"></i>
+                            <h4>Rapide</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section>
-            <div class="container">
-                <!-- start -->
-                <div class="row">
-
-						<div class="col-lg-8 col-md-8">
-							<a href="listings-list-with-sidebar.html" class="img-wrap">
-									<div class="img-wrap-content visible">
-										<h4>New York City</h4>
-										<span>24 Properties</span>
-									</div>
-								<div class="img-wrap-background" style="background-image: url(static/img/p-1.jpg);"></div>
-							</a>
-						</div>
-
-						<div class="col-lg-4 col-md-4">
-							<a href="listings-list-with-sidebar.html" class="img-wrap">
-									<div class="img-wrap-content visible">
-										<h4>Las Vegas, Nevada</h4>
-										<span>06 Properties</span>
-									</div>
-								<div class="img-wrap-background" style="background-image: url(static/img/p-2.jpg);"></div>
-							</a>
-						</div>
-
-					</div>
-                <!-- end -->
-            </div>
-        </section>
-
 {% endblock  %}

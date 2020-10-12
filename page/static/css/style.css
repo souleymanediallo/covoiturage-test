@@ -6,7 +6,7 @@ header .navbar-expand {
     padding: 10px 0px;
 }
 
-section {
+sectionx {
     padding-top: 80px;
     padding-bottom: 1px;
 }
@@ -17,4 +17,8 @@ section {
 
 .footer {
     background-color: #000000;
+}
+
+.list-covoiturage{
+    padding: 0px;
 }

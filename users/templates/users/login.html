@@ -9,18 +9,18 @@
             <div class="container smaller">
                 <div class="row intro">
                     <div class="col-12 col-md-12 align-self-center text-center text-md-left">
-                        <h2 class="text-center"><span class="featured"><span>Connexion</h2>
+                        <h2 class="text-center"><span class="featured">Connexion</span></h2>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Hero -->
- <!-- Testimonials -->
-        <section id="testimonials" class="section-1 offers testimonials">
+        <section class="section-1">
             <div class="container">
                 <div class="row justify-content-center items">
-                    <div class="col-lg-9">
-                        <form method="POST">
+                    <div class="col-lg-9 mb-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <form method="POST">
                             {% csrf_token %}
                             <div class="form-group">
                                 {{ form|crispy }}
@@ -29,8 +29,9 @@
                                 <button class="btn btn-dark">Envoyer</button>
                             </div>
                         </form>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-3"></div>
                 </div>
             </div>
         </section>
